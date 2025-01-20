@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodawanie osoby z wykorzystaniem Spring Boot</title>
+</head>
+<body>
+<h1>Dodaj osobę</h1>
+<form acion="/add" method="post">
+    <label for="name">Imię</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Kliknij aby dodać</button>
+</form>
+
+<h1>Lista osób</h1>
+<ul>
+    <th:block th:each="person: ${allPersons}">
+        <li th:text="${person.name}"></li>
+    </th:block>
+</ul>
+
+
+</body>
+</html>
